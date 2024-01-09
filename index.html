@@ -25,6 +25,7 @@
         <h1>One Million Sats Challenge 2024</h2>
         <p>This is a simple website for the 2024 One Million Sats Challenge</p>
         <p>Reaaaaaaady ? Let's go...</p>
+        <div id="stage"></div>
         <p>You still have : </p>
         <div id="countdown"></div>
 
@@ -37,8 +38,12 @@
               var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
               var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
               var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-              
+              var remain = Math.floor(now / (1000 * 60 * 60 * 24));
+
+              document.getElementById("stage").innerHTML = "Jour " + remain;
               document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+              
               
               if (distance < 0) {
                   clearInterval(x);
