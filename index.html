@@ -31,6 +31,7 @@
 
         <script>
           var countDownDate = new Date("Jan 1, 2025 00:00:00").getTime();
+          var debut = new Date("Dec 31, 2023 23:59:10").getTime();
           var x = setInterval(function() {
               var now = new Date().getTime();
               var distance = countDownDate - now;
@@ -38,7 +39,8 @@
               var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
               var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
               var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-              var remain = Math.floor(now / (1000 * 60 * 60 * 24));
+              var remainTime = debut - now
+              var remain = Math.floor(remainTime / (1000 * 60 * 60 * 24));
 
               document.getElementById("stage").innerHTML = "Jour " + remain;
               document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
